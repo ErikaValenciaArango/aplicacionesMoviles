@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="note">
+    <ion-item>
+      <ion-label position="stacked">Id referencia bibliográfica</ion-label>
+      <ion-input type="number" [(ngModel)]="note.idreferencia"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Título de la publicación</ion-label>
+      <ion-input [(ngModel)]="note.titulopub"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Autores</ion-label>
+      <ion-input [(ngModel)]="note.autores"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Tipo de publicación</ion-label>
+      <ion-input type="number" [(ngModel)]="note.tipopub"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Evento o revista en que se publico</ion-label>
+      <ion-input [(ngModel)]="note.eventorevista"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Código identificador de documento</ion-label>
+      <ion-input [(ngModel)]="note.doi"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Año de la publicación</ion-label>
+      <ion-input type="number" [(ngModel)]="note.anyopub"></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-button expand="block" color="success" (click)="updateNote()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    Actualizar
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="deleteNote()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Borrar
+  </ion-button>
+</ion-content>
